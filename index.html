@@ -375,6 +375,60 @@
             display: block;
         }
 
+        /* Education Section */
+        .education-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .education-card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .education-icon {
+            font-size: 2rem;
+            color: #667eea;
+        }
+        
+        .education-info h3 {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+        
+        .education-info p {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+        
+        .education-info .grade {
+            font-weight: bold;
+            color: #667eea;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .profile-section {
@@ -403,43 +457,10 @@
                 display: none;
             }
         }
-
-        /* Floating Action Buttons */
-        .fab-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .fab {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        .fab:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
         <header class="header">
             <div class="profile-section">
                 <div class="profile-image" onclick="profileImageClick()">AS</div>
@@ -464,7 +485,6 @@
             </div>
         </header>
 
-        <!-- Navigation Tabs -->
         <nav class="nav-tabs">
             <button class="nav-tab active" onclick="showSection('summary')">📋 Summary</button>
             <button class="nav-tab" onclick="showSection('experience')">💼 Experience</button>
@@ -473,7 +493,6 @@
             <button class="nav-tab" onclick="showSection('education')">🎓 Education</button>
         </nav>
 
-        <!-- Summary Section -->
         <section id="summary" class="content-section active">
             <div class="summary-card">
                 <h2>Professional Summary</h2>
@@ -504,7 +523,6 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="content-section">
             <div class="experience-timeline">
                 <div class="timeline-item" onclick="experienceClick('current')">
@@ -590,7 +608,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="content-section">
             <div class="skills-grid">
                 <div class="skill-category">
@@ -672,6 +689,116 @@
                         <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="skill-category">
-                    <h3 style="color: #667eea; margin-bottom:
+        <section id="certifications" class="content-section">
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Certified Research Analyst</h3>
+                    <p style="color: #34495e;">NISM XV</p>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Securities and Exchange Board of India</p>
+                </div>
+                <div class="cert-card">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Certified Financial Modeler</h3>
+                    <p style="color: #34495e;">Corporate Finance Institute</p>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Specialization in Advanced Financial Modeling and Valuation</p>
+                </div>
+                <div class="cert-card">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Google Analytics Certification</h3>
+                    <p style="color: #34495e;">Google</p>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Proficient in data analysis and reporting</p>
+                </div>
+                <div class="cert-card">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Data Science for Business</h3>
+                    <p style="color: #34495e;">Coursera (IBM)</p>
+                    <p style="color: #7f8c8d; font-size: 0.9rem;">Foundational knowledge in data-driven decision making</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="content-section">
+            <div class="education-card">
+                <h2>Educational Background</h2>
+                <div class="education-item">
+                    <div class="education-icon">🎓</div>
+                    <div class="education-info">
+                        <h3>MBA in Finance</h3>
+                        <p>Osmania University | 2018 - 2020</p>
+                        <p class="grade">Graduation with Distinction</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">🎓</div>
+                    <div class="education-info">
+                        <h3>Bachelor of Commerce (B.Com)</h3>
+                        <p>Osmania University | 2015 - 2018</p>
+                        <p class="grade">Achieved First Class with Honors</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon">🏫</div>
+                    <div class="education-info">
+                        <h3>Higher Secondary Education</h3>
+                        <p>Little Flower Junior College</p>
+                        <p class="grade">Achieved 95% in Commerce Stream</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Get all navigation tabs and content sections
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // Remove 'active' class from all tabs and content sections
+            navTabs.forEach(tab => tab.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('active'));
+
+            // Add 'active' class to the clicked tab and its corresponding section
+            const clickedTab = document.querySelector(`.nav-tab[onclick*="${sectionId}"]`);
+            const targetSection = document.getElementById(sectionId);
+
+            if (clickedTab && targetSection) {
+                clickedTab.classList.add('active');
+                targetSection.classList.add('active');
+            }
+        }
+        
+        // You can add logic for other buttons here if needed
+        function profileImageClick() {
+            // Optional: Add functionality for clicking the profile image
+            console.log('Profile image clicked!');
+        }
+        
+        function nameClick() {
+            // Optional: Add functionality for clicking the name
+            console.log('Name clicked!');
+        }
+        
+        function contactClick(type) {
+            // Optional: Add functionality for clicking contact info
+            console.log(`Contact info for ${type} clicked!`);
+        }
+        
+        function downloadResume() {
+            // Optional: Add functionality for downloading the resume
+            console.log('Download Resume button clicked!');
+            alert('Downloading resume...');
+        }
+        
+        function highlightClick(highlight) {
+            // Optional: Add functionality for clicking a summary highlight
+            console.log(`Summary highlight "${highlight}" clicked!`);
+        }
+
+        function experienceClick(item) {
+            // Optional: Add functionality for clicking an experience item
+            console.log(`Experience item "${item}" clicked!`);
+        }
+    </script>
+</body>
+</html>
