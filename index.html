@@ -130,8 +130,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
-            text-decoration: none; /* Add this to remove underline for anchor tag */
-            display: inline-block; /* Ensure button-like appearance */
+            text-decoration: none;
+            display: inline-block;
         }
 
         .download-btn:hover {
@@ -176,7 +176,7 @@
         /* Content Sections */
         .content-container {
             position: relative;
-            min-height: 500px; /* Adjust as needed */
+            min-height: 500px;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -196,7 +196,7 @@
             visibility: hidden;
             transform: translateY(20px);
             transition: all 0.6s ease;
-            overflow-y: auto; /* Enable scrolling for long content within the section */
+            overflow-y: auto;
         }
 
         .content-section.active {
@@ -205,7 +205,7 @@
             transform: translateY(0);
         }
         
-        /* Summary & Section Specific Styles */
+        /* General Section & List Styles */
         h2 {
             color: #667eea;
             margin-bottom: 20px;
@@ -213,24 +213,27 @@
         }
         
         .summary-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-top: 25px;
         }
 
         .highlight-item {
-            padding: 20px;
+            padding: 12px 20px;
             background: linear-gradient(135deg, #f8f9ff, #e8ecff);
-            border-radius: 15px;
+            border-radius: 25px;
             border-left: 4px solid #667eea;
             transition: all 0.3s ease;
             cursor: pointer;
+            font-size: 0.9rem;
+            color: #34495e;
+            font-weight: 500;
         }
 
         .highlight-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
         }
         
         /* Experience Section */
@@ -254,14 +257,14 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
         
-        /* Skills & Certifications */
-        .skills-grid, .cert-grid, .education-grid {
+        /* Expertise & Certifications & Education */
+        .expertise-grid, .cert-grid, .education-grid {
             display: grid;
             gap: 25px;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
 
-        .skill-category, .cert-card, .education-item {
+        .expertise-category, .cert-card, .education-item {
             background: linear-gradient(135deg, #f8f9ff, #e8ecff);
             border-radius: 15px;
             padding: 25px;
@@ -270,34 +273,21 @@
             border-left: 4px solid #667eea;
         }
 
-        .skill-category:hover, .cert-card:hover, .education-item:hover {
+        .expertise-category:hover, .cert-card:hover, .education-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
         }
-
-        .skill-item {
-            margin-bottom: 15px;
-        }
         
-        .cert-card, .education-item {
-            text-align: left;
+        .list-group {
+            list-style: none;
+            padding: 0;
         }
-
-        .skill-bar {
-            width: 100%;
-            height: 8px;
-            background: #ecf0f1;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-top: 5px;
+        .list-group li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
         }
-        
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 4px;
-            transition: width 1s ease;
-            position: relative;
+        .list-group li:last-child {
+            border-bottom: none;
         }
         
         .cert-card p {
@@ -352,7 +342,7 @@
         <nav class="nav-tabs">
             <button class="nav-tab active" data-tab-id="summary">📋 Summary</button>
             <button class="nav-tab" data-tab-id="experience">💼 Experience</button>
-            <button class="nav-tab" data-tab-id="skills">🎯 Skills</button>
+            <button class="nav-tab" data-tab-id="expertise">🎯 Expertise</button>
             <button class="nav-tab" data-tab-id="certifications">🏆 Certifications</button>
             <button class="nav-tab" data-tab-id="education">🎓 Education</button>
         </nav>
@@ -361,10 +351,18 @@
             <section id="summary" class="content-section active">
                 <h2>Professional Summary</h2>
                 <p style="font-size: 1.1rem; line-height: 1.7; color: #34495e;">
-                    Certified Research Analyst with <strong>4+ years of proven expertise</strong> in data analysis, financial modeling, and investment research. 
-                    Currently serving as Associate & Senior Financial Analyst at Golden Hills Capital India, specializing in income, revenue, and treasury reporting 
-                    with hands-on experience in DCF Valuation, Trading Comps, Transaction Comps, and M&A analysis.
+                    Financial Analyst with <strong>5+ years of professional experience</strong>, including <strong>financial reporting</strong>, <strong>data reconciliation</strong>, and <strong>client deliverables management</strong>. Currently supporting a <strong>crypto exchange client</strong> at Golden Hills Capital India, preparing <strong>financial and treasury reports</strong>, maintaining <strong>dashboards</strong>, and assisting in <strong>NAV calculation</strong>. Previously gained experience in <strong>equity research</strong>, <strong>IPO analysis</strong>, <strong>financial modeling</strong>, and <strong>company valuation</strong>. Certified in <strong>NISM Research Analysis</strong> and <strong>Mutual Fund Distribution</strong>, with recent training in <strong>AI-based tools</strong> to enhance reporting efficiency.
                 </p>
+
+                <div class="summary-highlights">
+                    <div class="highlight-item">Financial Reporting</div>
+                    <div class="highlight-item">Data Reconciliation</div>
+                    <div class="highlight-item">Client Deliverables</div>
+                    <div class="highlight-item">Crypto Exchange Client</div>
+                    <div class="highlight-item">Equity Research</div>
+                    <div class="highlight-item">Financial Modeling</div>
+                    <div class="highlight-item">AI-based Tools</div>
+                </div>
             </section>
 
             <section id="experience" class="content-section">
@@ -374,11 +372,11 @@
                         <h3 style="color: #667eea; font-size: 1.4rem;">Associate & Senior Financial Analyst</h3>
                         <h4 style="color: #7f8c8d; margin-bottom: 10px;">Golden Hills Capital India | Oct 2022 - Present</h4>
                         <ul style="margin-left: 20px; color: #34495e; line-height: 1.6;">
-                            <li>Prepare and deliver **income, revenue, and treasury reports** using Google Sheets/Slides, ensuring accuracy and timeliness.</li>
-                            <li>Update and validate **dashboards and exposure files** in client-defined templates.</li>
-                            <li>Perform **data reconciliation and exception checks** to maintain report accuracy.</li>
-                            <li>Manage deliverables via **Asana**, consistently meeting strict turnaround times.</li>
-                            <li>Support ad-hoc reporting requests, SOP creation, and adoption of **AI-based tools** for efficiency.</li>
+                            <li>Prepare and deliver <strong>income, revenue, and treasury reports</strong> using Google Sheets/Slides, ensuring accuracy and timeliness.</li>
+                            <li>Update and validate <strong>dashboards and exposure files</strong> in client-defined templates.</li>
+                            <li>Perform <strong>data reconciliation and exception checks</strong> to maintain report accuracy.</li>
+                            <li>Manage deliverables via <strong>Asana</strong>, consistently meeting strict turnaround times.</li>
+                            <li>Support ad-hoc reporting requests, SOP creation, and adoption of <strong>AI-based tools</strong> for efficiency.</li>
                         </ul>
                     </div>
                     
@@ -386,80 +384,46 @@
                         <h3 style="color: #667eea; font-size: 1.4rem;">Research Analyst</h3>
                         <h4 style="color: #7f8c8d; margin-bottom: 10px;">Hyderabad | 2 Years</h4>
                         <ul style="margin-left: 20px; color: #34495e; line-height: 1.6;">
-                            <li>Performed **fundamental analysis and technical analysis** of equities and mutual funds.</li>
-                            <li>Created detailed research reports and **IPO analysis** for client portfolios.</li>
-                            <li>Provided **investment recommendations** based on market trends and financial metrics.</li>
-                            <li>Managed a diversified client portfolio while ensuring compliance with **government policies**.</li>
+                            <li>Performed <strong>fundamental analysis and technical analysis</strong> of equities and mutual funds.</li>
+                            <li>Created detailed research reports and <strong>IPO analysis</strong> for client portfolios.</li>
+                            <li>Provided <strong>investment recommendations</strong> based on market trends and financial metrics.</li>
+                            <li>Managed a diversified client portfolio while ensuring compliance with <strong>government policies</strong>.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <section id="skills" class="content-section">
-                <h2>Skills & Professional Training</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3 style="color: #667eea; margin-bottom: 20px;">📊 Data Analysis Tools</h3>
-                        <div class="skill-item">
-                            <span>Data Analysis Tools</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>FactSet</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Bloomberg</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Python (Beginner)</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 40%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>VBA Macro</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 75%"></div></div>
-                        </div>
+            <section id="expertise" class="content-section">
+                <h2>Expertise</h2>
+                <div class="expertise-grid">
+                    <div class="expertise-category">
+                        <h3 style="color: #667eea; margin-bottom: 20px;">Financial Analysis & Modeling</h3>
+                        <ul class="list-group">
+                            <li>DCF, Trading & Transaction Comps</li>
+                            <li>Financial Modeling</li>
+                            <li>Company Valuation</li>
+                            <li>M&A Analysis</li>
+                        </ul>
                     </div>
                     
-                    <div class="skill-category">
-                        <h3 style="color: #667eea; margin-bottom: 20px;">💼 Financial Analysis</h3>
-                        <div class="skill-item">
-                            <span>DCF Valuation</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Trading Comps</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Transaction Comps</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>M&A Analysis</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Financial Modeling</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
-                        </div>
+                    <div class="expertise-category">
+                        <h3 style="color: #667eea; margin-bottom: 20px;">Data & Tools</h3>
+                        <ul class="list-group">
+                            <li>Advanced MS Excel</li>
+                            <li>Python (Beginner)</li>
+                            <li>Google Sheets & Slides</li>
+                            <li>Bloomberg, FactSet, VBA Macro</li>
+                        </ul>
                     </div>
 
-                    <div class="skill-category">
-                        <h3 style="color: #667eea; margin-bottom: 20px;">🔧 Other Skills</h3>
-                        <div class="skill-item">
-                            <span>Content Creation</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 70%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Accounting Software</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Soft Skills</span>
-                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
-                        </div>
+                    <div class="expertise-category">
+                        <h3 style="color: #667eea; margin-bottom: 20px;">Reporting & Visualization</h3>
+                        <ul class="list-group">
+                            <li>Dashboards</li>
+                            <li>MS PowerPoint</li>
+                            <li>Data Reconciliation</li>
+                            <li>Infographics & Visuals</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -469,11 +433,11 @@
                 <div class="cert-grid">
                     <div class="cert-card">
                         <h3 style="color: #667eea; margin-bottom: 10px;">NISM - XV Research Analyst Certification</h3>
-                        <p>Securities and Exchange Board of India</p>
+                        <p>National Institute of Securities Markets (NISM)</p>
                     </div>
                     <div class="cert-card">
                         <h3 style="color: #667eea; margin-bottom: 10px;">NISM - VA Mutual Fund Distributor Certification</h3>
-                        <p>Securities and Exchange Board of India</p>
+                        <p>National Institute of Securities Markets (NISM)</p>
                     </div>
                     <div class="cert-card">
                         <h3 style="color: #667eea; margin-bottom: 10px;">AI Tools Certification with Outskill</h3>
@@ -513,11 +477,9 @@
 
             navTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    // Remove active class from all tabs and sections
                     navTabs.forEach(t => t.classList.remove('active'));
                     contentSections.forEach(s => s.classList.remove('active'));
 
-                    // Add active class to the clicked tab and its corresponding section
                     const tabId = tab.getAttribute('data-tab-id');
                     const targetSection = document.getElementById(tabId);
                     
