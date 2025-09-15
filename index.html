@@ -31,7 +31,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 40px;
+            padding: 30px 40px; /* Reduced top/bottom padding */
             margin-bottom: 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -56,14 +56,14 @@
         }
 
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 100px; /* Slightly smaller */
+            height: 100px; /* Slightly smaller */
             border-radius: 50%;
             background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 40px; /* Adjusted font size */
             color: white;
             font-weight: bold;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
@@ -77,12 +77,12 @@
         }
 
         .profile-info h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Slightly smaller */
             background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 8px;
+            margin-bottom: 5px; /* Reduced margin */
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -92,44 +92,44 @@
         }
 
         .profile-info .title {
-            font-size: 1.3rem;
+            font-size: 1.2rem; /* Slightly smaller */
             color: #7f8c8d;
-            margin-bottom: 15px;
+            margin-bottom: 0; /* Removed bottom margin */
             font-weight: 500;
         }
 
-        .contact-grid {
-            display: grid;
-            gap: 8px;
+        .contact-details { /* Renamed for clarity and new styling */
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            gap: 15px; /* Spacing between contact items */
+            align-items: center;
+            font-size: 0.9rem;
+            color: #34495e;
         }
 
-        .contact-item {
+        .contact-details span {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 0.9rem;
+            gap: 5px;
         }
 
-        .contact-item a {
-            color: inherit;
+        .contact-details a {
+            color: #667eea; /* Link color for better visibility */
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .contact-item:hover {
-            background: rgba(102, 126, 234, 0.2);
-            transform: translateX(5px);
+        .contact-details a:hover {
+            color: #764ba2;
+            text-decoration: underline;
         }
+
 
         .download-btn {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 12px 25px; /* Slightly smaller padding */
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
@@ -137,6 +137,7 @@
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
             text-decoration: none;
             display: inline-block;
+            margin-top: 20px; /* Add some space above the button */
         }
 
         .download-btn:hover {
@@ -315,6 +316,14 @@
             .nav-tabs {
                 flex-direction: column;
             }
+
+            .contact-details {
+                flex-direction: column; /* Stack contact items vertically on small screens */
+                gap: 8px;
+            }
+            .profile-image {
+                margin: 0 auto; /* Center image on small screens */
+            }
         }
     </style>
 </head>
@@ -327,21 +336,12 @@
                     <h1>Ankith Sharma</h1>
                     <div class="title">Senior Financial Analyst</div>
                 </div>
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <span>📍</span> Hyderabad, India
-                    </div>
-                    <div class="contact-item">
-                        <span>📞</span> +91 63058 56430
-                    </div>
-                    <div class="contact-item">
-                        <span>✉️</span> ankithsharma48@gmail.com
-                    </div>
-                    <div class="contact-item">
-                        <span>🔗</span> <a href="https://www.linkedin.com/in/ankith-sharma-ab0b13276/" target="_blank">LinkedIn Profile</a>
-                    </div>
-                    <div class="contact-item">
-                        <span>💻</span> <a href="https://github.com/ankith84/my-resume-site" target="_blank">GitHub Repository</a>
+                <div> <div class="contact-details">
+                        <span>📍 Hyderabad, India</span>
+                        <span>📞 +91 63058 56430</span>
+                        <span>✉️ ankithsharma48@gmail.com</span>
+                        <span>🔗 <a href="https://www.linkedin.com/in/ankith-sharma-ab0b13276/" target="_blank">LinkedIn</a></span>
+                        <span>💻 <a href="https://github.com/ankith84/my-resume-site" target="_blank">GitHub</a></span>
                     </div>
                     <a href="resume.pdf" download class="download-btn">
                         📄 Download Resume
@@ -413,8 +413,7 @@
                             <li>DCF, Trading & Transaction Comps</li>
                             <li>Financial Modeling</li>
                             <li>Company Valuation</li>
-                            <li>M&A Analysis</li>
-                        </ul>
+                            </ul>
                     </div>
                     
                     <div class="expertise-category">
@@ -422,8 +421,7 @@
                         <ul class="list-group">
                             <li>Advanced Excel, Python (Beginner), VBA Macro</li>
                             <li>Google Sheets & Google Slides</li>
-                            <li>Bloomberg, FactSet</li>
-                        </ul>
+                            </ul>
                     </div>
 
                     <div class="expertise-category">
