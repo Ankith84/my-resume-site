@@ -98,32 +98,40 @@
             font-weight: 500;
         }
 
-        .contact-details { /* Renamed for clarity and new styling */
+        /* Reverted contact grid styling */
+        .contact-grid {
+            display: grid;
+            gap: 8px; /* Spacing between grid items */
+            grid-template-columns: 1fr; /* Default to single column for small screens */
+        }
+        @media (min-width: 768px) { /* Two columns for larger screens */
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr); 
+            }
+        }
+
+
+        .contact-item {
             display: flex;
-            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-            gap: 15px; /* Spacing between contact items */
             align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
             font-size: 0.9rem;
-            color: #34495e;
         }
 
-        .contact-details span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .contact-details a {
-            color: #667eea; /* Link color for better visibility */
+        .contact-item a {
+            color: inherit;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        .contact-details a:hover {
-            color: #764ba2;
-            text-decoration: underline;
+        .contact-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateX(5px);
         }
-
 
         .download-btn {
             background: linear-gradient(45deg, #667eea, #764ba2);
@@ -137,7 +145,9 @@
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
             text-decoration: none;
             display: inline-block;
-            margin-top: 20px; /* Add some space above the button */
+            grid-column: 1 / -1; /* Make button span full width in grid */
+            text-align: center;
+            margin-top: 10px; /* Space from contact items */
         }
 
         .download-btn:hover {
@@ -317,10 +327,6 @@
                 flex-direction: column;
             }
 
-            .contact-details {
-                flex-direction: column; /* Stack contact items vertically on small screens */
-                gap: 8px;
-            }
             .profile-image {
                 margin: 0 auto; /* Center image on small screens */
             }
@@ -336,12 +342,21 @@
                     <h1>Ankith Sharma</h1>
                     <div class="title">Senior Financial Analyst</div>
                 </div>
-                <div> <div class="contact-details">
-                        <span>📍 Hyderabad, India</span>
-                        <span>📞 +91 63058 56430</span>
-                        <span>✉️ ankithsharma48@gmail.com</span>
-                        <span>🔗 <a href="https://www.linkedin.com/in/ankith-sharma-ab0b13276/" target="_blank">LinkedIn</a></span>
-                        <span>💻 <a href="https://github.com/ankith84/my-resume-site" target="_blank">GitHub</a></span>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <span>📍</span> Hyderabad, India
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span> +91 63058 56430
+                    </div>
+                    <div class="contact-item">
+                        <span>✉️</span> ankithsharma48@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span> <a href="https://www.linkedin.com/in/ankith-sharma-ab0b13276/" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>💻</span> <a href="https://github.com/ankith84/my-resume-site" target="_blank">GitHub Repository</a>
                     </div>
                     <a href="resume.pdf" download class="download-btn">
                         📄 Download Resume
@@ -408,20 +423,21 @@
                 <h2>Expertise</h2>
                 <div class="expertise-grid">
                     <div class="expertise-category">
-                        <h3 style="color: #667eea; margin-bottom: 20px;">Financial Analysis & Modeling</h3>
+                        <h3 style="color: #667eea; margin-bottom: 20px;">Financial Analysis & Valuation</h3>
                         <ul class="list-group">
-                            <li>DCF, Trading & Transaction Comps</li>
+                            <li>DCF</li>
+                            <li>Trading Comps</li>
+                            <li>Transaction Comps</li>
                             <li>Financial Modeling</li>
-                            <li>Company Valuation</li>
-                            </ul>
+                        </ul>
                     </div>
                     
                     <div class="expertise-category">
                         <h3 style="color: #667eea; margin-bottom: 20px;">Data & Tools</h3>
                         <ul class="list-group">
-                            <li>Advanced Excel, Python (Beginner), VBA Macro</li>
+                            <li>Advanced Excel, Python (Beginner)</li>
                             <li>Google Sheets & Google Slides</li>
-                            </ul>
+                        </ul>
                     </div>
 
                     <div class="expertise-category">
