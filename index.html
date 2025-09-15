@@ -31,7 +31,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 30px 40px; /* Reduced top/bottom padding */
+            padding: 30px 40px;
             margin-bottom: 30px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -56,14 +56,14 @@
         }
 
         .profile-image {
-            width: 100px; /* Slightly smaller */
-            height: 100px; /* Slightly smaller */
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: linear-gradient(135deg, #667eea, #764ba2);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px; /* Adjusted font size */
+            font-size: 40px;
             color: white;
             font-weight: bold;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
@@ -77,12 +77,12 @@
         }
 
         .profile-info h1 {
-            font-size: 2.2rem; /* Slightly smaller */
+            font-size: 2.2rem;
             background: linear-gradient(45deg, #667eea, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 5px; /* Reduced margin */
+            margin-bottom: 5px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -92,24 +92,22 @@
         }
 
         .profile-info .title {
-            font-size: 1.2rem; /* Slightly smaller */
+            font-size: 1.2rem;
             color: #7f8c8d;
-            margin-bottom: 0; /* Removed bottom margin */
+            margin-bottom: 0;
             font-weight: 500;
         }
 
-        /* Reverted contact grid styling */
         .contact-grid {
             display: grid;
-            gap: 8px; /* Spacing between grid items */
-            grid-template-columns: 1fr; /* Default to single column for small screens */
+            gap: 8px;
+            grid-template-columns: 1fr;
         }
-        @media (min-width: 768px) { /* Two columns for larger screens */
+        @media (min-width: 768px) {
             .contact-grid {
-                grid-template-columns: repeat(2, 1fr); 
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-
 
         .contact-item {
             display: flex;
@@ -137,7 +135,7 @@
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             border: none;
-            padding: 12px 25px; /* Slightly smaller padding */
+            padding: 12px 25px;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
@@ -145,9 +143,9 @@
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
             text-decoration: none;
             display: inline-block;
-            grid-column: 1 / -1; /* Make button span full width in grid */
+            grid-column: 1 / -1;
             text-align: center;
-            margin-top: 10px; /* Space from contact items */
+            margin-top: 10px;
         }
 
         .download-btn:hover {
@@ -328,7 +326,7 @@
             }
 
             .profile-image {
-                margin: 0 auto; /* Center image on small screens */
+                margin: 0 auto;
             }
         }
     </style>
@@ -358,7 +356,7 @@
                     <div class="contact-item">
                         <span>💻</span> <a href="https://github.com/ankith84/my-resume-site" target="_blank">GitHub Repository</a>
                     </div>
-                    <a href="resume.pdf" download class="download-btn">
+                    <a href="resume.pdf" download class="contact-item">
                         📄 Download Resume
                     </a>
                 </div>
@@ -425,7 +423,7 @@
                     <div class="expertise-category">
                         <h3 style="color: #667eea; margin-bottom: 20px;">Financial Analysis & Valuation</h3>
                         <ul class="list-group">
-                            <li>DCF</li>
+                            <li>DCF Valuation</li>
                             <li>Trading Comps</li>
                             <li>Transaction Comps</li>
                             <li>Financial Modeling</li>
@@ -435,15 +433,17 @@
                     <div class="expertise-category">
                         <h3 style="color: #667eea; margin-bottom: 20px;">Data & Tools</h3>
                         <ul class="list-group">
-                            <li>Advanced Excel, Python (Beginner)</li>
-                            <li>Google Sheets & Google Slides</li>
+                            <li>Advanced Excel</li>
+                            <li>Google Sheets</li>
+                            <li>Python (Beginner)</li>
+                            <li>VBA</li>
                         </ul>
                     </div>
 
                     <div class="expertise-category">
                         <h3 style="color: #667eea; margin-bottom: 20px;">Reporting & Visualization</h3>
                         <ul class="list-group">
-                            <li>Dashboards</li>
+                            <li>Google Slides</li>
                             <li>MS PowerPoint</li>
                             <li>Data Reconciliation</li>
                             <li>Infographics & Visuals</li>
