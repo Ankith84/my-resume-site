@@ -119,6 +119,8 @@
             transition: all 0.3s ease;
             cursor: pointer;
             font-size: 0.9rem;
+            text-decoration: none; /* Add this to remove underline on button */
+            color: inherit; /* Inherit color to style button text */
         }
 
         .contact-item a {
@@ -129,184 +131,6 @@
         .contact-item:hover {
             background: rgba(102, 126, 234, 0.2);
             transform: translateX(5px);
-        }
-
-        .download-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
-            text-decoration: none;
-            display: inline-block;
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Navigation Tabs */
-        .nav-tabs {
-            display: flex;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-tab {
-            flex: 1;
-            padding: 15px 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: transparent;
-            border: none;
-            font-weight: 600;
-            color: #7f8c8d;
-        }
-
-        .nav-tab.active {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            transform: scale(1.02);
-        }
-
-        .nav-tab:hover:not(.active) {
-            background: rgba(102, 126, 234, 0.1);
-            color: #667eea;
-        }
-
-        /* Content Sections */
-        .content-container {
-            position: relative;
-            min-height: 500px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .content-section {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            padding: 40px;
-            box-sizing: border-box;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-            overflow-y: auto;
-        }
-
-        .content-section.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        /* General Section & List Styles */
-        h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .summary-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .highlight-item {
-            padding: 12px 20px;
-            background: linear-gradient(135deg, #f8f9ff, #e8ecff);
-            border-radius: 25px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: #34495e;
-            font-weight: 500;
-        }
-
-        .highlight-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-        }
-        
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-        }
-
-        .timeline-item {
-            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-left: 4px solid #667eea;
-            position: relative;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Expertise & Certifications & Education */
-        .expertise-grid, .cert-grid, .education-grid {
-            display: grid;
-            gap: 25px;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .expertise-category, .cert-card, .education-item {
-            background: linear-gradient(135deg, #f8f9ff, #e8ecff);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border-left: 4px solid #667eea;
-        }
-
-        .expertise-category:hover, .cert-card:hover, .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.1);
-        }
-        
-        .list-group {
-            list-style: none;
-            padding: 0;
-        }
-        .list-group li {
-            padding: 8px 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .list-group li:last-child {
-            border-bottom: none;
-        }
-        
-        .cert-card p {
-            font-size: 0.9rem;
-            color: #7f8c8d;
         }
 
         /* Responsive Design */
@@ -356,9 +180,9 @@
                     <div class="contact-item">
                         <span>💻</span> <a href="https://github.com/ankith84/my-resume-site" target="_blank">GitHub Repository</a>
                     </div>
-                    <a href="resume.pdf" download class="contact-item">
+                    <div id="download-button" class="contact-item">
                         📄 Download Resume
-                    </a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -512,6 +336,14 @@
                         targetSection.classList.add('active');
                     }
                 });
+            });
+
+            // Dynamic PDF Download Logic
+            document.getElementById('download-button').addEventListener('click', () => {
+                const newWindow = window.open('printable-resume.html');
+                newWindow.onload = () => {
+                    newWindow.print();
+                };
             });
         });
     </script>
