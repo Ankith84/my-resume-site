@@ -7,10 +7,10 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.4; /* More aggressive line height reduction */
             color: #2c3e50;
             margin: 0;
-            padding: 20px; /* Reduced padding */
+            padding: 15px; /* Reduced padding */
         }
         
         h1, h2, h3 {
@@ -18,39 +18,49 @@
             margin-top: 0;
         }
         
-        h1 { font-size: 1.8rem; } /* Reduced font size */
-        h2 { font-size: 1.3rem; border-bottom: 2px solid #667eea; padding-bottom: 5px; margin-bottom: 15px; } /* Reduced font size and margins */
-        h3 { font-size: 1.1rem; margin-top: 15px; } /* Reduced font size */
+        h1 { font-size: 1.6rem; } /* Aggressively reduced font size */
+        h2 { font-size: 1.2rem; border-bottom: 1px solid #667eea; padding-bottom: 4px; margin-bottom: 12px; } /* Aggressively reduced font size and margins */
+        h3 { font-size: 1rem; margin-top: 12px; } /* Aggressively reduced font size */
 
         .header {
             text-align: center;
-            margin-bottom: 20px; /* Reduced margin */
+            margin-bottom: 15px; /* Reduced margin */
         }
         
         .header .title {
             color: #7f8c8d;
-            font-size: 1rem; /* Reduced font size */
-            margin-top: 5px;
+            font-size: 0.9rem; /* Reduced font size */
+            margin-top: 3px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px; /* Reduced gap */
-            margin-top: 10px; /* Reduced margin */
+            gap: 10px; /* Reduced gap */
+            margin-top: 8px; /* Reduced margin */
+            font-size: 0.8rem;
         }
-
+        
+        /* New CSS for link printing */
         .contact-info a {
             text-decoration: none;
             color: #34495e;
             font-weight: 500;
         }
-        
+        .contact-info a::after {
+            content: " (" attr(href) ")";
+            display: inline;
+            word-wrap: break-word;
+            font-size: 0.7rem;
+            color: #7f8c8d;
+            text-decoration: none;
+        }
+
         .section {
-            margin-bottom: 20px; /* Reduced margin */
-            padding: 15px; /* Reduced padding */
-            border-radius: 10px;
+            margin-bottom: 15px; /* Reduced margin */
+            padding: 12px; /* Reduced padding */
+            border-radius: 8px;
             background-color: #f8f9ff;
             page-break-inside: avoid;
         }
@@ -58,7 +68,7 @@
         .section ul {
             list-style-type: disc;
             margin-left: 20px;
-            font-size: 0.9rem; /* Reduced font size */
+            font-size: 0.8rem; /* Aggressively reduced font size */
         }
         
         .section ul li strong {
@@ -68,12 +78,18 @@
         .job-title {
             font-weight: bold;
             color: #34495e;
+            font-size: 0.9rem;
         }
 
         .job-date {
             font-style: italic;
             color: #7f8c8d;
-            margin-bottom: 5px; /* Reduced margin */
+            margin-bottom: 4px; /* Reduced margin */
+            font-size: 0.8rem;
+        }
+        .job ul li {
+            line-height: 1.2;
+            margin-bottom: 2px;
         }
 
         .expertise-list {
@@ -82,16 +98,22 @@
         }
         .expertise-list li {
             font-weight: bold;
-            margin-top: 10px; /* Reduced margin */
+            margin-top: 8px; /* Reduced margin */
+            font-size: 0.9rem;
         }
         .expertise-list ul {
             font-weight: normal;
-            margin-top: 5px;
+            margin-top: 3px;
             list-style-type: none;
+            font-size: 0.8rem;
         }
 
         .cert-item, .edu-item {
-            margin-bottom: 10px; /* Reduced margin */
+            margin-bottom: 8px; /* Reduced margin */
+            font-size: 0.9rem;
+        }
+        .cert-item div, .edu-item div {
+            font-size: 0.8rem;
         }
 
         @media print {
@@ -119,7 +141,8 @@
         
         <div class="section">
             <h2>Professional Summary</h2>
-            <p style="font-size: 1rem; line-height: 1.5; color: #34495e;"> Financial Analyst with <strong>5+ years of professional experience</strong>, including <strong>financial reporting</strong>, <strong>data reconciliation</strong>, and <strong>client deliverables management</strong>. Currently supporting a <strong>crypto exchange client</strong> at Golden Hills Capital India, preparing <strong>financial and treasury reports</strong>, maintaining <strong>dashboards</strong>, and assisting in <strong>NAV calculation</strong>. Previously gained experience in <strong>equity research</strong>, <strong>IPO analysis</strong>, <strong>financial modeling</strong>, and <strong>company valuation</strong>. Certified in <strong>NISM Research Analysis</strong> and <strong>Mutual Fund Distribution</strong>, with recent training in <strong>AI-based tools</strong> to enhance reporting efficiency.
+            <p style="font-size: 0.9rem; line-height: 1.4; color: #34495e;">
+                Financial Analyst with <strong>5+ years of professional experience</strong>, including <strong>financial reporting</strong>, <strong>data reconciliation</strong>, and <strong>client deliverables management</strong>. Currently supporting a <strong>crypto exchange client</strong> at Golden Hills Capital India, preparing <strong>financial and treasury reports</strong>, maintaining <strong>dashboards</strong>, and assisting in <strong>NAV calculation</strong>. Previously gained experience in <strong>equity research</strong>, <strong>IPO analysis</strong>, <strong>financial modeling</strong>, and <strong>company valuation</strong>. Certified in <strong>NISM Research Analysis</strong> and <strong>Mutual Fund Distribution</strong>, with recent training in <strong>AI-based tools</strong> to enhance reporting efficiency.
             </p>
         </div>
 
@@ -128,7 +151,8 @@
             <div class="job">
                 <div class="job-title">Associate & Senior Financial Analyst</div>
                 <div class="job-date">Golden Hills Capital India | Oct 2022 - Present</div>
-                <ul style="margin-left: 20px; color: #34495e; line-height: 1.5; font-size: 0.9rem;"> <li>Prepare and deliver <strong>income, revenue, and treasury reports</strong> using Google Sheets/Slides, ensuring accuracy and timeliness.</li>
+                <ul>
+                    <li>Prepare and deliver <strong>income, revenue, and treasury reports</strong> using Google Sheets/Slides, ensuring accuracy and timeliness.</li>
                     <li>Update and validate <strong>dashboards and exposure files</strong> in client-defined templates.</li>
                     <li>Perform <strong>data reconciliation and exception checks</strong> to maintain report accuracy.</li>
                     <li>Manage deliverables via <strong>Asana</strong>, consistently meeting strict turnaround times.</li>
@@ -136,9 +160,11 @@
                 </ul>
             </div>
             
-            <div class="job" style="margin-top: 15px;"> <div class="job-title">Research Analyst</div>
+            <div class="job" style="margin-top: 12px;">
+                <div class="job-title">Research Analyst</div>
                 <div class="job-date">Hyderabad | 2 Years</div>
-                <ul style="margin-left: 20px; color: #34495e; line-height: 1.5; font-size: 0.9rem;"> <li>Performed <strong>fundamental analysis and technical analysis</strong> of equities and mutual funds.</li>
+                <ul>
+                    <li>Performed <strong>fundamental analysis and technical analysis</strong> of equities and mutual funds.</li>
                     <li>Created detailed research reports and <strong>IPO analysis</strong> for client portfolios.</li>
                     <li>Provided <strong>investment recommendations</strong> based on market trends and financial metrics.</li>
                     <li>Managed a diversified client portfolio while ensuring compliance with <strong>government policies</strong>.</li>
@@ -148,7 +174,8 @@
 
         <div class="section">
             <h2>Expertise</h2>
-            <ul class="expertise-list" style="font-size: 0.9rem;"> <li><strong>Financial Analysis & Valuation:</strong> DCF Valuation, Trading Comps, Transaction Comps, Financial Modeling</li>
+            <ul class="expertise-list">
+                <li><strong>Financial Analysis & Valuation:</strong> DCF Valuation, Trading Comps, Transaction Comps, Financial Modeling</li>
                 <li><strong>Data & Tools:</strong> Advanced Excel, Google Sheets, Python (Beginner), VBA</li>
                 <li><strong>Reporting & Visualization:</strong> Google Slides, MS PowerPoint, Data Reconciliation, Infographics & Visuals</li>
             </ul>
@@ -158,26 +185,32 @@
             <h2>Certifications</h2>
             <div class="cert-item">
                 <strong>NISM - XV Research Analyst Certification</strong>
-                <div style="font-size: 0.9rem;">National Institute of Securities Markets (NISM)</div> </div>
+                <div>National Institute of Securities Markets (NISM)</div>
+            </div>
             <div class="cert-item">
                 <strong>NISM - VA Mutual Fund Distributor Certification</strong>
-                <div style="font-size: 0.9rem;">National Institute of Securities Markets (NISM)</div> </div>
+                <div>National Institute of Securities Markets (NISM)</div>
+            </div>
             <div class="cert-item">
                 <strong>AI Tools Certification with Outskill</strong>
-                <div style="font-size: 0.9rem;">Outskill</div> </div>
+                <div>Outskill</div>
+            </div>
             <div class="cert-item">
                 <strong>Financial Modelling & Company Valuation</strong>
-                <div style="font-size: 0.9rem;">Investment Banking Institute, Delhi</div> </div>
+                <div>Investment Banking Institute, Delhi</div>
+            </div>
         </div>
         
         <div class="section">
             <h2>Education</h2>
             <div class="edu-item">
                 <strong>MBA Finance</strong>
-                <div style="font-size: 0.9rem;">Symbiosis University, Pune | 2024</div> </div>
+                <div>Symbiosis University, Pune | 2024</div>
+            </div>
             <div class="edu-item">
                 <strong>B.COM</strong>
-                <div style="font-size: 0.9rem;">Pandit Deendayal Shekhawati University | 2018</div> </div>
+                <div>Pandit Deendayal Shekhawati University | 2018</div>
+            </div>
         </div>
     </div>
 
